@@ -3,18 +3,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
-import static org.junit.Assert.assertThrows;
-
 import java.util.List;
+import static org.junit.Assert.assertThrows;
 import static org.mockito.Mockito.when;
 
-//@RunWith(Parameterized.class)
 public class LionTest {
 
     @Mock
@@ -32,7 +27,7 @@ public class LionTest {
     public MockitoRule mockitoRule = MockitoJUnit.rule();
 
     @Test
-    public void getFoodСallsCorrectMethod() throws Exception {
+    public void getFoodCallsCorrectMethod() throws Exception {
         List<String> exceptedFood = List.of("Мясо");
         when(feline.getFood("Хищник")).thenReturn(exceptedFood);
         List<String> actualFood = lion.getFood();
@@ -49,16 +44,19 @@ public class LionTest {
                 exceptedKittens, actualKittens);
     }
 
-    //добавить тест метода doesHaveMane с моком
     @Test
     public void doesHaveManeReturnsHasMane() {
-        //Lion lion = new Lion("Самец");
         lion.hasMane = true;
-        //boolean exceptedHasMane = true;
         boolean actualHasMane = lion.doesHaveMane();
         Assert.assertTrue("doesHaveMane возвращает hasMane", actualHasMane);
     }
 
-    //добавить тест оставшегося exception (другое) в lion
-
+    @Test
+    public void doesHaveManeExceptionTest() {
+        Exception lionException = assertThrows(
+                "Exception в Lion некорректно срабатывает",
+                Exception.class, ()-> lion = new Lion("Другое"));
+        Assert.assertEquals(lionException.getMessage(),
+                "Используйте допустимые значения пола животного - самец или самка");
+    }
 }

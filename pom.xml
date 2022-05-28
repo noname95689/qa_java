@@ -52,12 +52,14 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.7</version>
+                <configuration>
+                </configuration>
                 <executions>
                     <execution>
                         <!--id выбираешь самостоятельно-->
                         <id>prepare-agent</id>
                         <!--в какой фазе maven будет выполняться цель-->
-                        <phase>test</phase>
+                        <phase>initialize</phase>
                         <!--цель jacoco, которую нужно выполнить-->
                         <goals>
                             <goal>prepare-agent</goal>

@@ -7,10 +7,7 @@ import org.mockito.junit.MockitoJUnit;
 import org.junit.Test;
 import org.mockito.junit.MockitoRule;
 import java.util.List;
-
 import static org.mockito.Mockito.when;
-
-
 
 public class CatTest {
 
@@ -37,7 +34,7 @@ public class CatTest {
 
     @Test
     public void getFoodCallsCorrectMethod() throws Exception {
-        List<String> exceptedFood = List.of("");
+        List<String> exceptedFood = List.of("Мясо");
         when(feline.eatMeat()).thenReturn(exceptedFood);
         List<String> actualFood = cat.getFood();
         Assert.assertEquals("Метод getFood вызывает не eatMeat",

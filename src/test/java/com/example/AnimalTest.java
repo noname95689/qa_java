@@ -3,7 +3,6 @@ package com.example;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 public class AnimalTest {
@@ -16,7 +15,12 @@ public class AnimalTest {
     }
 
     @Test
-    public void getFood() { }
+    public void getFood() {
+        Exception getFoodException = assertThrows("Проверка",
+                Exception.class, ()-> animal.getFood("Всеядное"));
+        Assert.assertEquals(getFoodException.getMessage(),
+                "Неизвестный вид животного, используйте значение Травоядное или Хищник");
+    }
 
     @Test
     public void getFamily() {

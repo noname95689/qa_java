@@ -30,9 +30,4 @@ public class LionParametrizedTest {
         Assert.assertEquals("hasMane имеет некорректное значение",
                 exceptedHasMane, actualHasMane);
     }
-
-
-
-
-
 }
