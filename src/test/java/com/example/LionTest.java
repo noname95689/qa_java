@@ -32,8 +32,6 @@ public class LionTest {
     public MockitoRule mockitoRule = MockitoJUnit.rule();
 
     @Test
-    //Поменять местами ожидаемое и актуальное. Через моr добавить вывод строки
-    //при запросе  feline.getFood()
     public void getFoodСallsCorrectMethod() throws Exception {
         List<String> exceptedFood = List.of("Мясо");
         when(feline.getFood("Хищник")).thenReturn(exceptedFood);
@@ -47,7 +45,7 @@ public class LionTest {
         int exceptedKittens = 5;
         when(feline.getKittens()).thenReturn(exceptedKittens);
         int actualKittens = lion.getKittens();
-        Assert.assertEquals("lion.getKittens() вызывает не feline.getKittens",
+        Assert.assertEquals("lion.getKittens() вызывает не feline.getKittens()",
                 exceptedKittens, actualKittens);
     }
 

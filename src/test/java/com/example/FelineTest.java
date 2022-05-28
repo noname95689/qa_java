@@ -19,7 +19,7 @@ public class FelineTest {
         Assert.assertEquals("Ожидается результат: Животные, Птицы, Рыба",
                 List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
-    //Добавить запись в переменные для наглядности
+
     @Test
     public void getFamilyReturnsCorrectString() {
         String exceptedFamily = "Кошачьи";
@@ -34,7 +34,6 @@ public class FelineTest {
                 1, feline.getKittens());
     }
 
-    //Добавить параметризацию для количества котят
     @Test
     public void getKittensWithArgumentReturnsCorrectValue() {
         Assert.assertEquals("Количество котят не совпадает с ожидаемым",
