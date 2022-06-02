@@ -20,7 +20,7 @@ public class LionTest {
 
     @Before
     public void prepare() throws Exception {
-        lion = new Lion(feline);
+        lion = new Lion("Самец", feline);
     }
 
     @Rule
@@ -55,7 +55,7 @@ public class LionTest {
     public void doesHaveManeExceptionTest() {
         Exception lionException = assertThrows(
                 "Exception в Lion некорректно срабатывает",
-                Exception.class, ()-> lion = new Lion("Другое"));
+                Exception.class, ()-> lion = new Lion("Другое", feline));
         Assert.assertEquals(lionException.getMessage(),
                 "Используйте допустимые значения пола животного - самец или самка");
     }

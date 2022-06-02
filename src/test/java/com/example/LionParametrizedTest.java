@@ -3,9 +3,13 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
 
 @RunWith(Parameterized.class)
 public class LionParametrizedTest {
+
+    @Mock
+    Feline feline;
 
     private final String sex;
     private final boolean exceptedHasMane;
@@ -25,7 +29,7 @@ public class LionParametrizedTest {
 
     @Test
     public void hasManeHasCorrectValue() throws Exception {
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex, feline);
         boolean actualHasMane = lion.hasMane;
         Assert.assertEquals("hasMane имеет некорректное значение",
                 exceptedHasMane, actualHasMane);
