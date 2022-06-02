@@ -4,5 +4,4 @@ com\example\AnimalTest.class
 com\example\AnimalParametrizedTest.class
 com\example\CatTest.class
 com\example\LionTest.class
-com\example\PredatorTest.class
 com\example\FelineParametrizedTest.class

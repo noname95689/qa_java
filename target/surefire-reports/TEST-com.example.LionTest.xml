@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="com.example.LionTest" time="0.03" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="com.example.LionTest" time="0.031" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.14.1+10-LTS"/>
@@ -68,5 +68,5 @@
   <testcase classname="com.example.LionTest" name="getKittensReturnsCorrectValue" time="0.025"/>
   <testcase classname="com.example.LionTest" name="getFoodCallsCorrectMethod" time="0.004"/>
   <testcase classname="com.example.LionTest" name="doesHaveManeExceptionTest" time="0.001"/>
-  <testcase classname="com.example.LionTest" name="doesHaveManeReturnsHasMane" time="0"/>
+  <testcase classname="com.example.LionTest" name="doesHaveManeReturnsHasMane" time="0.001"/>
 </testsuite>
